@@ -7,6 +7,7 @@
 .bg-main{
     background-image: url('/couchlock-movie-finder/assets/img/bg-project.jpg');
     height: 100vh;
+    min-height: 100vh;
     width: 100%;
 }
 
