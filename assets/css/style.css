@@ -5,8 +5,8 @@
 }
 
 .bg-main{
-    background-image: url('/couchlock-movie-finder/assets/img/bg-generalImg.jpg');
-    min-height: 100vh;
+    background-image: url('/couchlock-movie-finder/assets/img/bg-project.jpg');
+    height: 100vh;
     width: 100%;
 }
 
@@ -36,12 +36,23 @@ ul{
 
 ul li{
     padding:  14px 18px;
-    font-family: 'Inconsolata', monospace;
+    font-family: 'Vina Sans', sans-serif;
+    font-size: medium;
 }
 
 .styleLetter{
     font-family: 'Playfair Display', serif;
     font-weight: 200;
+}
+
+.input{
+    opacity: 0.8;
+}
+
+.styleH2{
+    font-family: 'Vina Sans', sans-serif;
+    color: rgb(137, 30, 47);
+    font-size: larger;
 }
 
 ul li:hover::after{
@@ -59,7 +70,7 @@ ul li:hover::after{
     margin-top: 1%;
 }
 
-section{
+.main-description{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -116,23 +127,93 @@ p{
 }
 
 .wave .shape-fill {
-    fill: #FFFFFF;
+    fill: #ffffffad;
+}
+
+/* Styles for the movie page */
+.movie-container{
+    display: block;
+    height: 100%;
+    width: 100%;
+    background-image: url('/couchlock-movie-finder/assets/img/bg-general-movies.jpg');
+}
+
+.container{
+    margin: 0;
+    padding-left: 0;
+}
+
+.section{
+    padding: 0;
+    margin: 0;
+    display: block;
+    width: 100vw;
+    background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
+
+}
+
+.posterDisplay{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    padding-left: 0;
+    height: 100vh;
+    float: left;
+}
+
+/* CSS Styles for shape */
+.triangle-shape {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.triangle-shape svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 150px;
+}
+
+.triangle-shape .shape-fill {
+    fill: #ffffff83;
+}
+
+.is-4{
+    margin-top: 3%;
+    border-radius: 30px;
 }
 
 .card{
-    margin: 3%;
-    min-height: 100vh;
-    width: 25%;
+    background-color: black;
+    opacity: 0.6;
 }
 
-.logo-displayed{
-    height: 15%;
-    width: 15%;
-    z-index: 1;
+.title, .heading, .movieSynopsis{
+    color: white;
+}
+
+.title{
+    padding-top: 20%;
+    padding-bottom: 1%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.57);
+}
+
+.title, .movieSynopsis{
+    margin-top: 5%;
     justify-content: center;
     text-align: center;
+    align-items: center;
 }
 
-#wave2 .shape-fill{
-    fill: #b7907369;
+iframe{
+    padding: 1%;
+    justify-content: center;
+    height: 50%;
+    padding-top: 3%;
 }
+
