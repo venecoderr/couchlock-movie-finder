@@ -160,6 +160,7 @@ p{
     padding-left: 0;
     height: 100vh;
     float: left;
+    width: 100%;
 }
 
 /* CSS Styles for shape */
