@@ -1,3 +1,4 @@
+//Carousel logic for displayment needs to be added.
 let userInput = $('#userSearch')
 let searchForm = $('#searchForm')
 
