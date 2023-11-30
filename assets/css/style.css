@@ -5,7 +5,7 @@
 }
 
 .bg-main{
-    background-image: url('/couchlock-movie-finder/assets/img/bg-project.jpg');
+    background-image: url('/couchlock-movie-finder/assets/img/bg-image.jpg');
     height: 100vh;
     min-height: 100vh;
     width: 100%;
@@ -52,7 +52,7 @@ ul li{
 
 .styleH2{
     font-family: 'Vina Sans', sans-serif;
-    color: rgb(137, 30, 47);
+    color: rgb(37, 9, 9);
     font-size: larger;
 }
 
@@ -98,6 +98,14 @@ p{
     font-size: smaller;
 }
 
+.btn-drop{
+    transition: transform 0.3s ease-in-out 0s;
+}
+
+.btn-drop:hover{
+    transform: translateY(-10px);
+}
+
 .material-symbols-outlined {
   font-variation-settings:
   'FILL' 0,
@@ -128,29 +136,22 @@ p{
 }
 
 .wave .shape-fill {
-    fill: #ffffffad;
+    fill: #ffffff83;
 }
 
 /* Styles for the movie page */
-.movie-container{
-    display: block;
-    height: 100%;
-    width: 100%;
-    background-image: url('/couchlock-movie-finder/assets/img/bg-general-movies.jpg');
-}
 
 .container{
     margin: 0;
     padding-left: 0;
 }
 
-.section{
+.sec-movie{
     padding: 0;
     margin: 0;
     display: block;
     width: 100vw;
     background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
-
 }
 
 .posterDisplay{
@@ -182,17 +183,16 @@ p{
 }
 
 .triangle-shape .shape-fill {
-    fill: #ffffff83;
+    fill: #FFFFFF;
+    opacity: 0.4;
 }
 
-.is-4{
+.movieDisplay{
     margin-top: 3%;
     border-radius: 30px;
-}
-
-.card{
     background-color: black;
     opacity: 0.6;
+
 }
 
 .title, .heading, .movieSynopsis{
@@ -212,10 +212,48 @@ p{
     align-items: center;
 }
 
-iframe{
-    padding: 1%;
-    justify-content: center;
-    height: 50%;
-    padding-top: 3%;
+.iframes{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
 }
 
+iframe{
+    padding: 3%;
+    justify-content: center;
+}
+
+/* Styles for favorite */
+
+.fav{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 80vh;
+    background-color: black;
+    opacity: 0.8;
+    margin-top: 5%;
+    margin: 1.5%;
+}
+
+.bg-fav{
+    height: 100vh;
+    background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
+
+}
+
+.movieTitle{
+    border-bottom: 1px solid white;
+    padding-top: 10%;
+    text-align: center;
+}
+
+figure img{
+    height: 100%;
+}
+
+.pagination{
+    z-index: 1;
+    justify-content: center;
+    padding: 1%;
+}

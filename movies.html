@@ -27,20 +27,13 @@
 
 <body>
 
-  <header>
-  </header>
   <main>
 
-    <section class="section">
+    <section class="section sec-movie">
       <div class="container">
         <div class="columns">
           <div class="column is-6">
             <img class="posterDisplay" src="./assets/img/bg-project.jpg">
-            <div class="triangle-shape">
-              <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                  <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
-              </svg>
-          </div>
           </div>
           <div class="column is-4 card movieDisplay">
             <!-- Movie Category needs to be requested -->
@@ -49,12 +42,19 @@
             <p class="movieSynopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fugiat id porro optio aut aliquam deleniti sit hic voluptatibus, dolores aliquid dolor ad in nam quos dolorum, totam et? Autem?</p>
             <!-- Year, rating and favorite button needs to be added -->
           </div>
-          <div class="column is-4">
+          <div class="column is-4 iframes">
+            <!-- API will request 4 iframes -->
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pj1sa6dK_-4?si=9B9GcavQGOxJJvP6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             <iframe width="560" height="315" src="https://www.youtube.com/embed/pj1sa6dK_-4?si=9B9GcavQGOxJJvP6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
           </div>
         </div>
       </div>
+      <div class="triangle-shape">
+        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+        </svg>
+    </div>
+
     </section>
 
   </main>
