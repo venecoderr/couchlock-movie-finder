@@ -151,7 +151,6 @@ p{
     margin: 0;
     display: block;
     width: 100vw;
-    height: 100vh;
     background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
 }
 
@@ -174,7 +173,7 @@ p{
 
 /* CSS Styles for shape */
 .triangle-shape {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 0;
     width: 100%;
@@ -195,13 +194,6 @@ p{
     opacity: 0.4;
 }
 
-.movieDisplay{
-    margin-top: 3%;
-    border-radius: 30px;
-    background-color: black;
-    opacity: 0.6;
-}
-
 .title, .heading, .movieSynopsis{
     color: white;
 }
@@ -209,41 +201,25 @@ p{
 .title{
     padding-top: 20%;
     padding-bottom: 1%;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.57);
 }
-
-.title, .movieSynopsis{
-    margin-top: 5%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-}
-
-/* Styles for favorite */
 
 .card{
+    border-radius: 30px;
     justify-content: center;
     text-align: center;
     align-items: center;
     height: 80vh;
     background-color: black;
     opacity: 0.8;
-    margin-top: 5%;
     margin: 1.5%;
-}
-
-.bg-fav{
-    height: 100vh;
-    background: linear-gradient(109.6deg, rgb(6, 2, 2) 32.4%, rgb(137, 30, 47) 98.8%);
-
 }
 
 .movieTitle{
     border-bottom: 1px solid white;
-    padding-top: 10%;
     text-align: center;
+    padding-top: 0.5%;
+    font-size: 20px;
+    font-family: 'DM Serif Display', serif;
 }
 
-figure img{
-    height: 100%;
-}
+
