@@ -171,6 +171,12 @@ p{
     width: 100vw;
 }
 
+/* Btn save hover styles */
+#saveBtn:hover .material-symbols-outlined{
+    fill: goldenrod;
+    color: goldenrod;
+}
+
 /* CSS Styles for shape */
 .triangle-shape {
     position: fixed;
@@ -220,6 +226,57 @@ p{
     padding-top: 0.5%;
     font-size: 20px;
     font-family: 'DM Serif Display', serif;
+}
+
+@keyframes fade{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes slide{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-100%);
+    }
+}
+
+iframe{
+    animation: fade linear both;
+    animation-duration: 5s;
+    animation-timeline: view();
+    animation-range: entry 50% cover 40%;
+}
+
+.iframes{
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.column{
+    animation: backInUp;
+    animation-duration: 2s;
+}
+
+.iframes:hover .iframe{
+    animation-play-state: paused;
+}
+
+.iframe{
+    animation: 10s slide infinite linear;
+    flex-wrap: nowrap;
+}
+
+.iframe iframe{
+    height: 35vh;
+    width: 30vw;
 }
 
 
