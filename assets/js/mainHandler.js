@@ -14,6 +14,5 @@ function goToFavorites(event){
     window.location = ('./favorites.html')
 }
 
-
 searchForm.on('submit', goToResults)
 favBtn.on('click', goToFavorites)
