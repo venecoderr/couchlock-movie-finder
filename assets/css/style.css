@@ -19,6 +19,10 @@ nav{
     text-align: center;
 }
 
+a{
+    color: black;
+}
+
 header img{
     width: 20%;
     height: 25%;
