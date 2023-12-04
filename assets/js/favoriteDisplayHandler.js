@@ -1,20 +1,32 @@
-let savedCardEl = '<div class="column is-4 card fav"><div class="card-image"><figure><img src="/couchlock-movie-finder/assets/img/bg-project.jpg"></figure></div>'+
-'<div class="card-content"><p class="heading movieCat"></p><h1 class="movieTitle"></h1><p class="movieSynopsis"></p></div></div>'
+let savedCardEl = '<div class="column is-4 card">'+
+'<div class="card-image">'+
+'<figure><img class="posterDisplay" src="#"></figure></div>'+
+'<div class="card-content">'+
+'<p class="heading movieCat"></p>'+
+'<h1 class="movieTitle"></h1>'+
+'<p class="movieSynopsis"></p></div></div>'
+let savedDisplay = $('#savedDisplay')
+let keys = JSON.parse(localStorage.getItem('keyChain'))
 
-for(let i = 0; i < movieCard.length; i++){
-    $(posterDisplay[i]).attr('src', data.Search[i].Poster)
-    $(movieTitle[i]).text(data.Search[i].Title)
-    $(movieYear[i]).text(data.Search[i].Year)
-    let plotUrl = 'http://www.omdbapi.com/?t='+data.Search[i].Title+'&type=movie&plot&page=1&i=tt3896198&apikey=5e93a94c'
-    fetch(plotUrl)
-    .then(function (response) {
-        return response.json()})
-    .then(function(data){
-        for(let i = 0; i < movieCard.length; i++){
-            $(movieSynopsis[i]).text(data.Plot)
-            $(movieCat[i]).text(data.Genre)
-            // $(movieYear[i]).text(data.Search[i].Year)
+
+function displaySaves(){
+    if(keys !== null){
+        for(let i = 0; i < keys.length; i++){
+            $(savedDisplay).append(savedCardEl)
         }
-        console.log(data)
-    })
+        let posterDisplay = $('.posterDisplay')
+        let movieTitle = $('.movieTitle')
+        let movieSynopsis = $('.movieSynopsis')
+        let movieCat = $('.movieCat')
+        for(let i = 0; i < keys.length; i++){
+            let workingSave = JSON.parse(localStorage.getItem(keys[i]))
+            $(posterDisplay[i]).attr('src', workingSave[0])
+            $(movieTitle[i]).text(workingSave[1])
+            $(movieSynopsis[i]).text(workingSave[2])
+            $(movieCat[i]).text(workingSave[3])
+
+        }
+    }
 }
+
+displaySaves()

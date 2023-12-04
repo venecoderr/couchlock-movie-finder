@@ -1,12 +1,11 @@
 let posterDisplay = $('.posterDisplay')
-let movieCard = $('.sec-movie')
+let movieCard = $('.movieDisplay')
 let movieTitle = $('.movieTitle')
 let movieYear = $('.movieYear')
 let movieSynopsis = $('.movieSynopsis')
 let movieCat = $('.movieCat')
-let trailerDisplay = $('trailerDisplay')
-let saveBtn = $('#saveBtn')
-
+let trailerDisplay = $('.trailerDisplay')
+let saveBtn = $('.saveBtn')
 
 function searchMovie(){
     let infoUrl = 'http://www.omdbapi.com/?s='+localStorage.getItem('search')+'&type=movie&page=1&i=tt3896198&apikey=5e93a94c'
@@ -16,8 +15,7 @@ function searchMovie(){
     .then(function(data){
         for(let i = 0; i < movieCard.length; i++){
             $(posterDisplay[i]).attr('src', data.Search[i].Poster)
-            $(movieTitle[i]).text(data.Search[i].Title)
-            $(movieYear[i]).text(data.Search[i].Year)
+            $(movieTitle[i]).text(data.Search[i].Title+' ('+data.Search[i].Year+')')
             let plotUrl = 'http://www.omdbapi.com/?t='+data.Search[i].Title+'&type=movie&plot&page=1&i=tt3896198&apikey=5e93a94c'
             fetch(plotUrl)
             .then(function (response) {
@@ -26,45 +24,40 @@ function searchMovie(){
                 for(let i = 0; i < movieCard.length; i++){
                     $(movieSynopsis[i]).text(data.Plot)
                     $(movieCat[i]).text(data.Genre)
-                    // $(movieYear[i]).text(data.Search[i].Year)
                 }
-                console.log(data)
             })
         }
-        
-        console.log(data)
+    })
+  
+    let trailerUrl = 'https://youtube.googleapis.com/youtube/v3/search?q='+localStorage.getItem('search')+'%20movie%20trailer&maxResults=20&part=snippet&type=video&key=AIzaSyAOhw0g_HG6u1sGbR9QUsFNACC8uTIPQ0Q'
+    fetch(trailerUrl)
+    .then(function (response) {
+        return response.json()})
+    .then(function(data){
+        for(let i = 0; i < trailerDisplay.length; i++){
+            let requestedTrailer = 'https://www.youtube.com/embed/'+data.items[i].id.videoId
+            $(trailerDisplay[i]).attr('src', requestedTrailer)
+        }        
     })
 
-
-    // let trailerUrl = 'https://youtube.googleapis.com/youtube/v3/videos ?q='+localStorage.getItem('search')+'%20movie&part=snippet&maxResults=3&type=video&key=AIzaSyAOhw0g_HG6u1sGbR9QUsFNACC8uTIPQ0Q'
-    // fetch(trailerUrl)
-    // .then(function (response) {
-    //     return response.json()})
-    // .then(function(data){
-    //     console.log(data)
-    //     for(let i = 0; i < movieCard.length; i++){
-    //         let requestedTrailer = 'https://www.youtube.com/watch?v='+data.items[i].id[1]
-    //         $(iFrames[i]).attr('src', requestedTrailer)
-    //     }        
-    //     //when we have the I frame ill use requestTrailer and attr to change iframe href
-    // })
-
 }
 
-function saveCards(){
-    for(let i = 0; i < movieCard.length; i++){
-        let saveEntry = []
-        let entryKey = 'saved' + i
-        saveEntry.push($(posterDisplay[i]).text())
-        saveEntry.push($(movieTitle[i]).text())
-        saveEntry.push($(movieYear[i]).text())
-        saveEntry.push($(movieSynopsis[i]).text())
-        saveEntry.push($(movieCat[i]).text())
-        saveEntry.shift()
-        localStorage.setItem(entryKey, JSON.stringify(saveEntry))
+function saveKeys(event){
+    let keyChain = JSON.parse(localStorage.getItem('keyChain'))
+    let cardEl = $(this).parent()
+    let favSaved = []
+    if(keyChain.includes(cardEl.children('.movieTitle').text())){
+
+    }else{
+        keyChain.push(cardEl.children('.movieTitle').text())
+        favSaved.push(cardEl.children('.posterDisplay').attr('src'))
+        favSaved.push(cardEl.children('.movieTitle').text())
+        favSaved.push(cardEl.children('.movieSynopsis').text())
+        favSaved.push(cardEl.children('.movieCat').text())
     }
+    localStorage.setItem('keyChain', JSON.stringify(keyChain))
+    localStorage.setItem(cardEl.children('.movieTitle').text(), JSON.stringify(favSaved))
 }
 
-
-saveBtn.on('click', saveCards)
+movieCard.on('click', '.saveBtn', saveKeys)
 searchMovie()
