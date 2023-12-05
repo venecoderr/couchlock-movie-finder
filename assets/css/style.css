@@ -8,7 +8,7 @@
     background-image: url('/couchlock-movie-finder/assets/img/bg-image.jpg');
     height: 100vh;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
 }
 
 nav{
@@ -176,7 +176,8 @@ p{
 }
 
 /* Btn save hover styles */
-#saveBtn:hover .material-symbols-outlined{
+.saveBtn:hover .material-symbols-outlined{
+    cursor: grab; 
     fill: goldenrod;
     color: goldenrod;
 }
@@ -325,7 +326,10 @@ iframe{
 }
 
 .popcorn{
-    height: 70%;
+    padding-top: 2%;
+    height: 75%;
+    width: 100%;
+    justify-content: center;
     z-index: 1;
 }
 
@@ -333,10 +337,10 @@ iframe:hover{
     animation-play-state: running;
 }
 
-.popcorn:hover{
+/* .popcorn:hover{
     transform: scale(1.07);
     transition-duration: 1s;
-}
+} */
 
 .i-title:hover{
     transform: scale(1.1);
