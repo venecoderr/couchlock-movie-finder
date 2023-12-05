@@ -1,4 +1,4 @@
-let savedCardEl = '<div class="column is-one-third card">'+
+let savedCardEl = '<div class="column is-3 card">'+
 '<div class="card-image">'+
 '<figure><img class="posterDisplay" src="#"></figure></div>'+
 '<div class="card-content">'+
