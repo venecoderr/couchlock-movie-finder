@@ -95,7 +95,6 @@ h2, p{
     z-index: 1;
     float: left;
     color: black;
-    padding-top: 1%;
 }
 
 h2{
@@ -112,6 +111,8 @@ p{
 .btn-drop{
     transition: transform 0.3s ease-in-out 0s;
     position: relative;
+    color: white;
+    opacity: 0.6;
 }
 
 .btn-drop:hover{
@@ -210,7 +211,7 @@ p{
 
 .triangle-shape .shape-fill {
     fill: #FFFFFF;
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
 .title, .heading, .movieSynopsis{
@@ -261,7 +262,7 @@ p{
     justify-content: center;
     color: white;
     font-size: 20px;
-    padding: 1%;
+    padding-left: 3%;
 }
 
 .span-title{
@@ -275,6 +276,10 @@ p{
 
 .larger-size{
     height: 70vh;
+}
+
+.larger-size iframe{
+    border-radius: 10px;
 }
 
 .movieDisplay{
@@ -301,7 +306,7 @@ p{
 
 .wave-shape .shape-fill {
     fill: #FFFFFF;
-    opacity: 0.4;
+    opacity: 0.2;
 }
 
 iframe{
@@ -345,13 +350,38 @@ iframe:hover{
     animation-play-state: running;
 }
 
-/* .popcorn:hover{
-    transform: scale(1.07);
-    transition-duration: 1s;
-} */
-
 .i-title:hover{
     transform: scale(1.1);
     transition-duration: 1s;
     border-bottom: 1px solid rgba(255, 255, 255, 0.563);
+}
+
+/* Styles for favorite */
+.sec-fav{
+    width: 100vw;
+    height: 100%;
+    margin: 0;
+}
+
+.favorite{
+    width: 100%;
+    height: 100%;
+    scroll-snap-type: x mandatory;
+    overflow-x: scroll;
+    display: flex;
+    padding-left: 10%;
+    margin-left: 3%;
+    overflow-x: hidden;
+    transition-duration: 2s;
+}
+
+.favorite #savedDisplay{
+    flex: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 80vh;
+    scroll-snap-align: start;
+
 }
