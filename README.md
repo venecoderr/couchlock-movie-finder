@@ -20,7 +20,7 @@ After you have saved a favorite you can use the drop down menu to get to the fav
 
 Your favorites will show up like this, you can still access the navbar
 
-![alt text](assets/images/screenshot.png)
+![alt text](./assets/img/favs-ss.png)
 
 ## Credits
 Thanks for their participation on this project:
