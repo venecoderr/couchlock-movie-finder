@@ -19,6 +19,10 @@ nav{
     text-align: center;
 }
 
+a{
+    color: black;
+}
+
 header img{
     width: 20%;
     height: 25%;
@@ -218,6 +222,7 @@ p{
     background-color: black;
     opacity: 0.8;
     margin: 1.5%;
+    z-index: 1;
 }
 
 .movieTitle{
@@ -228,28 +233,14 @@ p{
     font-family: 'DM Serif Display', serif;
 }
 
-@keyframes fade{
-    from{
-        opacity: 0;
-    }
-    to{
-        opacity: 1;
-    }
-}
-
-@keyframes slide{
-    from{
-        transform: translateX(0);
-    }
-    to{
-        transform: translateX(-100%);
-    }
+.posterDisplay{
+    height: 50vh;
 }
 
 .i-title{
-    padding-top: 1%;
+    padding: 1%;
     font-family: 'Playfair Display', serif;
-    font-size: 25px;
+    font-size: 35px;
     justify-content: center;
     text-align: center;
     color: white;
@@ -260,6 +251,8 @@ p{
     text-align: center;
     justify-content: center;
     color: white;
+    font-size: 20px;
+    padding: 1%;
 }
 
 .span-title{
@@ -267,20 +260,12 @@ p{
 }
 
 .sec-iframe{
-    padding-top: 2%;
-    animation: fade linear both;
-    animation-duration: 5s;
-    animation-timeline: view();
-    animation-range: entry 50% cover 50%;
+    padding-top: 1%;
+    min-height: 100vh;
 }
 
-.iframes{
-    margin-top: 0.5%;
-    padding: 2%;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    overflow: hidden;
+.larger-size{
+    height: 70vh;
 }
 
 .movieDisplay{
@@ -288,16 +273,73 @@ p{
     animation-duration: 2s;
 }
 
-.iframes:hover .iframe{
-    animation-play-state: paused;
+/* Styles for wave */
+.wave-shape {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
 }
 
-.iframe{
-    animation: 10s slide infinite linear;
-    flex-wrap: nowrap;
+.wave-shape svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 166px;
 }
 
-.iframe iframe{
-    height: 35vh;
-    width: 30vw;
+.wave-shape .shape-fill {
+    fill: #FFFFFF;
+    opacity: 0.4;
+}
+
+iframe{
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+@keyframes show {
+    from{
+        opacity: 0;
+        scale: 25%;
+    }
+    to{
+        opacity: 1;
+        scale: 100%;
+    }
+}
+
+.sec-iframe{
+    view-timeline-name: --iframe;
+    view-timeline-axis: block;
+
+    animation-timeline: --iframe;
+    animation-name: show;
+    animation-duration: 5s;
+
+    animation-range: entry 10% cover 50%;
+    animation-fill-mode: both;
+}
+
+.popcorn{
+    height: 70%;
+    z-index: 1;
+}
+
+iframe:hover{
+    animation-play-state: running;
+}
+
+.popcorn:hover{
+    transform: scale(1.07);
+    transition-duration: 1s;
+}
+
+.i-title:hover{
+    transform: scale(1.1);
+    transition-duration: 1s;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.563);
 }

@@ -1,7 +1,11 @@
 let userInput = $('#userSearch')
 let searchForm = $('#searchForm')
-let favBtn = $('#favBtn')
-let exportInput = ''
+let keyChain = []
+
+if(localStorage.getItem('keyChain') === null){
+    keyChain.shift()
+    localStorage.setItem('keyChain', JSON.stringify(keyChain))
+}
 
 function goToResults(event){
     event.preventDefault()
@@ -9,11 +13,4 @@ function goToResults(event){
     window.location = ('./movies.html')
 }
 
-function goToFavorites(event){
-    event.preventDefault()
-    window.location = ('./favorites.html')
-}
-
-
 searchForm.on('submit', goToResults)
-favBtn.on('click', goToFavorites)

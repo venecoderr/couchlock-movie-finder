@@ -47,66 +47,60 @@
       </div>
     </div>
 
-    <section class="section">
-      <div class="container">
+    <section class="section show-animate">
+      <div class="container animate">
         <div class="columns">
           <div class="column is-4 card movieDisplay">
-            <div class="card-image">
-                <img class="posterDisplay" src="/couchlock-movie-finder/assets/img/bg-project.jpg">
-            </div>
-            <div class="card-content">
-              <div class="media-content">
-                <!-- Movie Category needs to be requested -->
-                <p class="heading">Category</p>
-                <h1 class="title movieTitle">Movie Title</h1>
-                <!-- Fav Icon -->
-                <label class="checkbox" id="saveBtn">
-                  <span class="material-symbols-outlined">
-                    kid_star
-                  </span>
-                </label>
-                <p class="movieSynopsis"></p>
-              </div>
-        </div>
-        </div>
+            <p class="heading movieCat">Category</p>
+            <h1 class="title movieTitle">Movie Title</h1>
+            <img class="posterDisplay" src="#" alt="Trailer Poster">
+            <!-- Fav Icon -->
+            <label class="saveBtn" class="checkbox">
+                <!-- <input type="checkbox"> -->
+                <span class="material-symbols-outlined">
+                  kid_star
+                </span>
+            </label>
+            <p class="movieSynopsis">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique fugiat id porro optio aut aliquam deleniti sit hic voluptatibus, dolores aliquid dolor ad in nam quos dolorum, totam et? Autem?</p>
+            <!-- Year, rating and favorite button needs to be added -->
+          </div>
         </div>
       </div>
-      <div class="triangle-shape">
+      <div class="wave-shape">
         <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-            <path d="M1200 0L0 0 598.97 114.72 1200 0z" class="shape-fill"></path>
+            <path d="M892.25 114.72L0 0 0 120 1200 120 1200 0 892.25 114.72z" class="shape-fill"></path>
         </svg>
     </div>
     </section>
 
       <!-- Scroll Animations -->
       <section class="sec-iframe">
-        <div class="columns">
-          <div class="column text-iframe">
-            <h1 class="i-title">Take a <span class="span-title">trailer </span>shot.</h1>
-          </div class="column text-iframe">
-          <div>
-            <p class="i-text">Cause shorts can be sometimes the best way to know!</p>
-          </div>
-        </div>
-              <!-- Fix iframe layout -->
-              <div class="columns iframes">
-                <div class="column iframe">
-                  <iframe src="https://www.youtube.com/embed/_8ylSrn3SJY?si=bFwPQj1a8mC-f41a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="column iframe">
-                  <iframe src="https://www.youtube.com/embed/_8ylSrn3SJY?si=bFwPQj1a8mC-f41a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="column iframe">
-                  <iframe src="https://www.youtube.com/embed/_8ylSrn3SJY?si=bFwPQj1a8mC-f41a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="column iframe">
-                  <iframe src="https://www.youtube.com/embed/_8ylSrn3SJY?si=bFwPQj1a8mC-f41a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-                <div class="column iframe">
-                  <iframe src="https://www.youtube.com/embed/_8ylSrn3SJY?si=bFwPQj1a8mC-f41a" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+         
+          <div class="columns">
+              <div class="column is-half animate">
+                <h1 class="i-title">Take a <span class="span-title">trailer </span>shot.</h1>
+                <p class="i-text">Cause shorts can be sometimes the best way to know!</p>
+              </div>
+              <div class="column">
+                <iframe class="trailerDisplay" src="https://www.youtube.com/embed/Rt0kp4VW1cI?si=5aDI9ulQNc2sEiye" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="column">
+                <iframe class="trailerDisplay" src="https://www.youtube.com/embed/UwSBQWI-bek?si=6Fm257-LP7VniWaq" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
               </div>
             </div>
+            <div class="columns larger-size animate">
+              <div class="column is-three-fifths">
+                <iframe class="trailerDisplay" src="https://www.youtube.com/embed/hyyyKcfJRGQ?si=zEplSZ3aBaJU_-ch" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+              </div>
+              <div class="column">
+                <iframe class="trailerDisplay" src="https://www.youtube.com/embed/yrTJby-EY8c?si=5NvHUKPxbEbHTVnr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+            <div class="column">
+              <h1 class="i-title">Don't <span class="span-title">forget </span>your POPCORN.</h1>
+              <img class="popcorn" src="./assets/img/Diseño sin título (8).png">
+            </div>
+
+            </div>     
       </section>
   </main>
 
