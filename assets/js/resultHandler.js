@@ -8,7 +8,7 @@ let trailerDisplay = $('.trailerDisplay')
 let saveBtn = $('.saveBtn')
 
 function searchMovie(){
-    let infoUrl = 'http://www.omdbapi.com/?s='+localStorage.getItem('search')+'&type=movie&page=1&i=tt3896198&apikey=5e93a94c'
+    let infoUrl = 'https://www.omdbapi.com/?s='+localStorage.getItem('search')+'&type=movie&page=1&i=tt3896198&apikey=5e93a94c'
     fetch(infoUrl)
     .then(function (response) {
         return response.json()})
@@ -16,7 +16,7 @@ function searchMovie(){
         for(let i = 0; i < movieCard.length; i++){
             $(posterDisplay[i]).attr('src', data.Search[i].Poster)
             $(movieTitle[i]).text(data.Search[i].Title+' ('+data.Search[i].Year+')')
-            let plotUrl = 'http://www.omdbapi.com/?t='+data.Search[i].Title+'&type=movie&plot&page=1&i=tt3896198&apikey=5e93a94c'
+            let plotUrl = 'https://www.omdbapi.com/?t='+data.Search[i].Title+'&type=movie&plot&page=1&i=tt3896198&apikey=5e93a94c'
             fetch(plotUrl)
             .then(function (response) {
                 return response.json()})
